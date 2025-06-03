@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "lib": [
+            "ES2020"
+        ],
+        "module": "commonjs",
+        "outDir": "out",
+        "rootDir": "src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "shared-config": [
+                "../shared-config/src"
+            ]
+        }
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "out"
+    ]
+}

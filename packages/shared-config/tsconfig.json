@@ -1,15 +1,15 @@
 {
     "compilerOptions": {
         "target": "ES2020",
-        "lib": [
-            "ES2020"
+        "types": [
+            "node"
         ],
         "module": "commonjs",
-        "outDir": "out",
+        "declaration": true,
+        "outDir": "dist",
         "rootDir": "src",
-        "strict": true,
         "esModuleInterop": true,
-        "skipLibCheck": true
+        "strict": true
     },
     "include": [
         "src"
