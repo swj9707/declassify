@@ -4,7 +4,18 @@
         {
             "label": "pnpm: compile",
             "type": "shell",
-            "command": "pnpm run compile",
+            "command": "pnpm",
+            "args": [
+                "run",
+                "compile"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/packages/vscode-extension"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "problemMatcher": [
                 "$tsc"
             ]

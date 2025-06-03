@@ -1,53 +1,12 @@
 {
-  "name": "declassify-vscode",
-  "displayName": "Declassify",
-  "description": "Sanitize your code before sharing it with LLMs. Mask company-specific names and keywords like variables, classes, and package names.",
-  "version": "0.0.1",
-  "publisher": "Woojin Son",
-  "engines": {
-    "vscode": "^1.80.0"
-  },
-  "categories": [
-    "Other",
-    "Linters"
-  ],
-  "activationEvents": [
-    "onCommand:declassifyCode.start"
-  ],
-  "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "declassifyCode.start",
-        "title": "Declassify: Sanitize Code for LLM"
-      }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "Declassify Configuration",
-      "properties": {
-        "declassify.keywords": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [
-            "mycorp"
-          ],
-          "description": "List of sensitive keywords to sanitize. Variables, class names, and package names containing these will be renamed."
-        }
-      }
+    "name": "declassify",
+    "private": true,
+    "version": "0.1.0",
+    "scripts": {
+        "build": "pnpm -r run build",
+        "dev": "pnpm -r run dev"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0"
     }
-  },
-  "scripts": {
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "package": "vsce package",
-    "publish": "vsce publish"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.80.0",
-    "typescript": "^5.0.0",
-    "vsce": "^2.14.0"
-  }
 }
