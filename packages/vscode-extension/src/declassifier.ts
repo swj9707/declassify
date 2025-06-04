@@ -3,6 +3,7 @@ export function declassifyCode(code: string, keywords: string[]): string {
     let counter = 0;
     const map = new Map<string, string>();
 
+
     for (const regex of regexList) {
         code = code.replace(regex, (match) => {
             if (!map.has(match)) {

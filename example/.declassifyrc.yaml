@@ -1,0 +1,7 @@
+keywords:
+  - mycorp
+  - internal
+
+replacements:
+  classPrefix: Obf
+  packageRoot: com.example
