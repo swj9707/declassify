@@ -8,7 +8,7 @@ This directory contains sample source files and configuration files used to test
 
 ## 📄 Included Files
 
-### `test.ts`
+### `src/test.ts`
 - TypeScript file with dummy variables and class names
 - Includes identifiers like `mycorpService`, `exampleClient`, etc.
 - Can be used with VSCode extension to test obfuscation
