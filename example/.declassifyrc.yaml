@@ -1,6 +1,6 @@
 keywords:
   - mycorp
-  - internal
+  - example
 
 replacements:
   classPrefix: Obf
