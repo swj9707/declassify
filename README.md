@@ -1,42 +1,88 @@
-# Declassify - VSCode Extension
+# 🧠 Declassify
 
-🚧 **Protect your company’s sensitive code when asking LLMs.**  
-🔒 **LLM에 질문하기 전에 회사 내부 식별자를 자동으로 마스킹하세요.**
+Sanitize your source code before sending it to LLMs like ChatGPT. This monorepo contains tools for obfuscating sensitive identifiers (variables, classes, package names) and optionally restoring them later.
 
----
-
-## ✨ Features / 주요 기능
-
-- ✅ Keyword-based identifier sanitization (변수명, 클래스명, 패키지명 자동 치환)
-- ✅ Restore original names (원래 이름 복원 기능 지원)
-- ✅ Configuration via settings or `.declassifyrc.yaml` (VSCode 설정 또는 YAML 구성 지원)
-- ✅ Clipboard integration (치환된 결과를 클립보드에 복사)
+LLM에 질문하기 전, 민감한 코드를 자동으로 난독화하고 선택적으로 복원할 수 있도록 돕는 모노레포 프로젝트입니다.
 
 ---
 
-## 🛠 How to Use / 사용 방법
+## 📁 Packages
 
-1. Open any source file (Java, Kotlin, TypeScript)  
-   (Java, Kotlin, TypeScript 파일을 열어주세요)
-
-2. Select code or leave selection empty to sanitize entire file  
-   (일부 선택하거나, 전체 파일을 자동 처리 가능)
-
-3. Run the command:  
-   **Command Palette → `Declassify: Sanitize Code for LLM`**  
-   (커맨드 팔레트에서 위 명령어 실행)
-
-4. Result is copied to clipboard  
-   (결과는 클립보드에 자동 복사됩니다)
+| Name | Description |
+|------|-------------|
+| [`vscode-extension`](./packages/vscode-extension) | VSCode extension for AST-based obfuscation and clipboard integration |
+| [`shared-config`](./packages/shared-config)       | Shared logic for reading `.declassifyrc.yaml` config files and defaults |
 
 ---
 
-## ⚙️ Configuration / 설정 방법
+## ⚙️ How It Works
 
-### Option 1: VSCode Settings (`settings.json`)
-```json
-{
-  "declassify.keywords": ["mycorp"],
-  "declassify.replacements.classPrefix": "Obf",
-  "declassify.replacements.packageRoot": "com.example"
-}
+```mermaid
+graph LR
+    A[VSCode Extension] --> B[Load .declassifyrc.yaml]
+    B --> C[Find sensitive keywords]
+    C --> D[Replace with ObfA, ObfB...]
+    D --> E[Copy to clipboard]
+    E --> F[Paste into LLM prompt]
+```
+
+---
+
+## 📦 Installation & Development
+
+### Prerequisites
+- [pnpm](https://pnpm.io/)
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Java](https://adoptopenjdk.net/) (for java-obfuscator v8+ recommended)
+
+### Setup
+```bash
+git clone https://github.com/swj9707/declassify.git
+cd declassify
+pnpm install
+```
+
+### Build All
+```bash
+pnpm -r run build
+```
+
+### Run VSCode Extension (Development Mode)
+1. Open VSCode at `packages/vscode-extension`
+2. Press `F5` to launch Extension Development Host
+3. Try `Ctrl+Shift+P` → `Declassify: Sanitize Code for LLM`
+
+
+---
+
+## 🛠 Configuration
+
+`.declassifyrc.yaml` must be placed at your workspace root:
+
+```yaml
+keywords:
+  - mycorp
+  - danal
+replacements:
+  classPrefix: Obf
+  packageRoot: com.example
+```
+
+
+---
+
+## 🗺 Roadmap
+
+- [x] Basic keyword-based obfuscation
+- [x] Clipboard copy after sanitization
+- [x] Shared YAML-based config
+- [ ] Restore obfuscated code
+- [ ] Kotlin PSI-based obfuscator
+- [ ] Web-based config visualizer
+- [ ] IntelliJ plugin
+
+---
+
+## 🧾 License
+
+MIT © Woojin Son
