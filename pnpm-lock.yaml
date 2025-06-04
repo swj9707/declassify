@@ -33,10 +33,16 @@ importers:
 
   packages/vscode-extension:
     dependencies:
+      shared-config:
+        specifier: workspace:*
+        version: link:../shared-config
       ts-morph:
         specifier: ^26.0.0
         version: 26.0.0
     devDependencies:
+      '@types/node':
+        specifier: ^22.15.29
+        version: 22.15.29
       '@types/vscode':
         specifier: ^1.80.0
         version: 1.100.0

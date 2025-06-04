@@ -5,15 +5,15 @@
             "ES2020"
         ],
         "module": "commonjs",
-        "outDir": "out",
-        "rootDir": "src",
+        "moduleResolution": "node",
         "strict": true,
         "esModuleInterop": true,
-        "skipLibCheck": true,
+        "outDir": "out",
+        "rootDir": "src",
         "baseUrl": ".",
         "paths": {
             "shared-config": [
-                "../shared-config/src"
+                "../shared-config/dist"
             ]
         }
     },

@@ -21,23 +21,7 @@
         "command": "declassifyCode.start",
         "title": "Declassify: Sanitize Code for LLM"
       }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "Declassify Configuration",
-      "properties": {
-        "declassify.keywords": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "default": [
-            "mycorp"
-          ],
-          "description": "List of sensitive keywords to sanitize. Variables, class names, and package names containing these will be renamed."
-        }
-      }
-    }
+    ]
   },
   "scripts": {
     "compile": "tsc -p ./",
@@ -46,11 +30,13 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
+    "@types/node": "^22.15.29",
     "@types/vscode": "^1.80.0",
     "typescript": "^5.0.0",
     "vsce": "^2.14.0"
   },
   "dependencies": {
+    "shared-config": "workspace:*",
     "ts-morph": "^26.0.0"
   }
 }

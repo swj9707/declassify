@@ -10,6 +10,13 @@ export interface DeclassifyConfig {
     };
 }
 
+/**
+ * 📄 Loads the .declassifyrc.yaml configuration file from the given workspace path.
+ * If the file does not exist, returns a default config with an empty keyword list.
+ * 
+ * @param workspacePath  Absolute path to the VSCode workspace folder
+ * @returns DeclassifyConfig object ({ keywords: string[] })
+ */
 export function loadDeclassifyConfig(workspacePath: string): DeclassifyConfig {
     const configPath = path.join(workspacePath, '.declassifyrc.yaml');
 
