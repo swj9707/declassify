@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { declassifyCode } from './declassifier';
-import { loadDeclassifyConfig } from 'shared-config';
+import { loadDeclassifyConfig } from '@declassify/shared-config';
 
 
 /**
