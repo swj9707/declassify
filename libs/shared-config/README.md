@@ -43,7 +43,7 @@ If the file does not exist, returns `{ keywords: [] }`.
 import { loadDeclassifyConfig } from 'shared-config';
 
 const config = loadDeclassifyConfig('/home/user/dev/project');
-console.log(config.keywords); // ['mycorp', 'danal']
+console.log(config.keywords); // ['mycorp', 'example']
 ```
 
 ---
@@ -53,7 +53,7 @@ console.log(config.keywords); // ['mycorp', 'danal']
 ```yaml
 keywords:
   - mycorp
-  - danal
+  - example
 
 replacements:
   classPrefix: Obf
