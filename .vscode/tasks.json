@@ -10,7 +10,7 @@
                 "compile"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/packages/vscode-extension"
+                "cwd": "${workspaceFolder}/apps/vscode-extension"
             },
             "group": {
                 "kind": "build",

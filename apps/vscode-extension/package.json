@@ -36,7 +36,7 @@
     "vsce": "^2.14.0"
   },
   "dependencies": {
-    "shared-config": "workspace:*",
+    "@declassify/shared-config": "workspace:*",
     "ts-morph": "^26.0.0"
   }
 }

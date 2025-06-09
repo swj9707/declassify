@@ -1,5 +1,6 @@
 {
     "name": "declassify",
+    "publisher": "Woojin Son",
     "private": true,
     "version": "0.1.0",
     "scripts": {
@@ -7,6 +8,9 @@
         "dev": "pnpm -r run dev"
     },
     "devDependencies": {
-        "typescript": "^5.0.0"
+        "@types/node": "^22.15.29",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3",
+        "vitest": "^3.2.2"
     }
 }

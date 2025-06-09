@@ -1,0 +1,29 @@
+{
+  "name": "@declassify/typescript-obfuscator",
+  "version": "0.1.0",
+  "description": "Declassify Typescript Obfuscator",
+  "main": "dist/index.js",
+  "types": "dist/index.t.ts",
+  "bin": {
+    "declassify-ts": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "vitest",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {
+    "@declassify/shared-config": "workspace:*",
+    "js-yaml": "^4.1.0",
+    "ts-morph": "^26.0.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.15.29",
+    "typescript": "^5.8.3"
+  }
+}

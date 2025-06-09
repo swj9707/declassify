@@ -62,7 +62,7 @@ pnpm -r run build
 ```yaml
 keywords:
   - mycorp
-  - danal
+  - example
 replacements:
   classPrefix: Obf
   packageRoot: com.example

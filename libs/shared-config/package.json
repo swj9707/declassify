@@ -1,5 +1,6 @@
 {
-    "name": "shared-config",
+    "name": "@declassify/shared-config",
+    "publisher": "Woojin Son",
     "version": "0.1.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

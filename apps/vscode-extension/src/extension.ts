@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { declassifyCode } from './declassifier';
-import { loadDeclassifyConfig } from 'shared-config';
+import { loadDeclassifyConfig } from '@declassify/shared-config';
 
 
 /**
@@ -32,9 +32,8 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         const config = loadDeclassifyConfig(workspaceFolder);
-        const keywords = config.keywords ?? [];
 
-        const sanitized = declassifyCode(code, keywords);
+        const sanitized = declassifyCode(code, config);
 
         vscode.env.clipboard.writeText(sanitized);
         vscode.window.showInformationMessage(`Sanitized code copied to clipboard!  config : ${config}`);

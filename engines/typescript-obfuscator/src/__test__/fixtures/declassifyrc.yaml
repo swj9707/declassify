@@ -1,0 +1,5 @@
+keywords:
+  - password
+  - token
+replacements:
+  classPrefix: Obf
