@@ -1,4 +1,4 @@
-# 🔧 shared-config
+# 🔧 @declassify/shared-config
 
 A shared configuration utility for the Declassify project.  
 Declassify 프로젝트의 설정 파일을 불러오고 파싱하는 공용 유틸리티입니다.
