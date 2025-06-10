@@ -56,7 +56,7 @@ console.log(restored); // 원본 복원
 ```
 
 ## 🔗 연관 패키지 | Related Packages
-- [`@declassify/shared-config`](../libs/shared-config)
+- [`@declassify/shared-config`](../../libs/shared-config)
   난독화 전략 및 공통 설정을 관리합니다.  
   Shared config and mapping strategy used across engines.
 
