@@ -4,12 +4,7 @@
         "module": "commonjs",
         "outDir": "out",
         "rootDir": "src",
-        "baseUrl": ".",
-        "paths": {
-            "shared-config": [
-                "../../libs/shared-config/dist"
-            ]
-        }
+        "baseUrl": "."
     },
     "include": [
         "src"

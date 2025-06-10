@@ -10,8 +10,8 @@ LLM에 질문하기 전, 민감한 코드를 자동으로 난독화하고 선택
 
 | Name | Description |
 |------|-------------|
-| [`vscode-extension`](./packages/vscode-extension) | VSCode extension for AST-based obfuscation and clipboard integration |
-| [`shared-config`](./packages/shared-config)       | Shared logic for reading `.declassifyrc.yaml` config files and defaults |
+| [`vscode-extension`](./apps/vscode-extension) | VSCode extension for AST-based obfuscation and clipboard integration |
+| [`shared-config`](./libs/shared-config)       | Shared logic for reading `.declassifyrc.yaml` config files and defaults |
 
 ---
 

@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "Declassify Typescript Obfuscator",
   "main": "dist/index.js",
-  "types": "dist/index.t.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "bin": {
     "declassify-ts": "dist/cli/index.js"
   },

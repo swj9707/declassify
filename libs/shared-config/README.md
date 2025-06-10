@@ -1,4 +1,4 @@
-# 🔧 shared-config
+# 🔧 @declassify/shared-config
 
 A shared configuration utility for the Declassify project.  
 Declassify 프로젝트의 설정 파일을 불러오고 파싱하는 공용 유틸리티입니다.
@@ -43,7 +43,7 @@ If the file does not exist, returns `{ keywords: [] }`.
 import { loadDeclassifyConfig } from 'shared-config';
 
 const config = loadDeclassifyConfig('/home/user/dev/project');
-console.log(config.keywords); // ['mycorp', 'danal']
+console.log(config.keywords); // ['mycorp', 'example']
 ```
 
 ---
@@ -53,7 +53,7 @@ console.log(config.keywords); // ['mycorp', 'danal']
 ```yaml
 keywords:
   - mycorp
-  - danal
+  - example
 
 replacements:
   classPrefix: Obf
