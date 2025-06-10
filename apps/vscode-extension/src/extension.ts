@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
-import { declassifyCode } from './declassifier';
+import * as path from 'path';
+import * as fs from 'fs/promises';
 import { loadDeclassifyConfig } from '@declassify/shared-config';
-
+import { obfuscate } from '@declassify/typescript-obfuscator';
 
 /**
  * This method is called when the VSCode extension is activated.
@@ -23,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const document = editor.document;
         const selection = editor.selection;
-        const code = selection.isEmpty ? document.getText() : document.getText(selection);
+        const sourceCode = selection.isEmpty ? document.getText() : document.getText(selection);
 
         const workspaceFolder = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
         if (!workspaceFolder) {
@@ -33,10 +34,20 @@ export function activate(context: vscode.ExtensionContext) {
 
         const config = loadDeclassifyConfig(workspaceFolder);
 
-        const sanitized = declassifyCode(code, config);
+        const { code: resultCode, map: resultMap } = obfuscate(sourceCode, config);
 
-        vscode.env.clipboard.writeText(sanitized);
-        vscode.window.showInformationMessage(`Sanitized code copied to clipboard!  config : ${config}`);
+        vscode.env.clipboard.writeText(resultCode);
+        vscode.window.showInformationMessage('✅ Obfuscated code copied to clipboard!');
+
+        // Save resultMap to .declassify-maps
+        const mapsDir = path.join(workspaceFolder, '.declassify-maps');
+        await fs.mkdir(mapsDir, { recursive: true });
+
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const mapPath = path.join(mapsDir, `map-${timestamp}.json`);
+        await fs.writeFile(mapPath, JSON.stringify(resultMap, null, 2), 'utf-8');
+
+        vscode.window.showInformationMessage(`🗂️ Map file saved: ${path.basename(mapPath)}`);
     });
 
     context.subscriptions.push(disposable);

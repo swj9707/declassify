@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@declassify/shared-config": "workspace:*",
+    "@declassify/typescript-obfuscator": "workspace:*",
     "ts-morph": "^26.0.0"
   }
 }
