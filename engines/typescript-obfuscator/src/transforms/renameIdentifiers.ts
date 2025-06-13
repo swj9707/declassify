@@ -29,7 +29,11 @@ export function renameIdentifiers(file: SourceFile, config: DeclassifyConfig): R
 
     for (const id of identifiers) {
         const text = id.getText();
-        if (!config.keywords.includes(text)) continue;
+
+        const matchedKeyword = config.keywords.find(keyword =>
+            text.includes(keyword)
+        );
+        if (!matchedKeyword) continue;
 
         if (!nameMap.has(text)) {
             const replacement = generateName(counter++, config.replacements?.classPrefix ?? '_');
